@@ -45,8 +45,10 @@ Then, place the file in the p1_navigation/ folder in the DRLND GitHub repository
 
 
 #### Step 3: Explore the Environment
-After you have followed the instructions above, open Navigation.ipynb (located in the p1_navigation/ folder in the DRLND GitHub repository) and follow the instructions to learn how to use the Python API to control the agent.
+After you have followed the instructions above, open Navigation.ipynb (located in this GitHub repository) and follow the instructions to learn how to use the Python API to control the agent.
 
-In the last code cell of the notebook, you'll learn how to design and observe an agent that always selects random actions at each timestep. Your goal in this project is to create an agent that performs much better!
+In the "Take Random Actions in the Environment" code cell of the notebook, you'll learn how to design and observe an agent that always selects random actions at each timestep. 
+
+In the "DNQ learning" code cell, a DRL agent is provided to perform much better than the random action and reached on average 15+ over 100 consecutive episodes. 
 
  
