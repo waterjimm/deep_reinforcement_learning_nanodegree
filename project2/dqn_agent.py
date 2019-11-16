@@ -42,17 +42,7 @@ class Agent():
         self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed)
         # Initialize time step (for updating every UPDATE_EVERY steps)
         self.t_step = 0
-    
-	def save_model(self, path):
-		#torch.save(self.qnetwork_local, path)
-		torch.save(self.qnetwork_local.state_dict(), PATH)
-	
-	def load_model(self, path):
-		self.qnetwork_local.load_state_dict(torch.load(path))
-		self.qnetwork_target.load_state_dict(torch.load(path))
- 
-		
-		
+    		
     def step(self, state, action, reward, next_state, done):
         # Save experience in replay memory
         self.memory.add(state, action, reward, next_state, done)
