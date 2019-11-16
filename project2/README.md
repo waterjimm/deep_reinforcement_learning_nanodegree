@@ -5,6 +5,7 @@
 
 
 # Project 2: Navigation
+Information is collected from the DRL nanodegree project instruction. 
 
 ### Introduction
 
