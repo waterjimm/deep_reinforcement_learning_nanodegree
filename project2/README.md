@@ -49,6 +49,6 @@ After you have followed the instructions above, open Navigation.ipynb (located i
 
 In the "Take Random Actions in the Environment" code cell of the notebook, you'll learn how to design and observe an agent that always selects random actions at each timestep. 
 
-In the "DNQ learning" code cell, a DRL agent is provided to perform much better than the random action and reached on average 15+ over 100 consecutive episodes. 
+In the "DNQ learning" code cell, a DRL agent is provided and trained to perform much better than the random action. It is able to reach the goal (on average 15+ over 100 consecutive episodes). 
 
  
