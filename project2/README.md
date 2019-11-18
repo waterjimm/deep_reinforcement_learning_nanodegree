@@ -62,6 +62,6 @@ The double DQN implemented contains two neural networks: target and local to mak
 Experience replay is used to train the local neural network to draw samples from history logs and reduce the correlation of consecutive samples. A fixed sized buffer is used to keep the recent experience. 
 
 #### Interesting findings
-Learning rate is important. When its value is too large, the agent performance would not be very good since the network would easily get stuck in local optimal weights. 
+Hyperparameters have significant impact on how the model performs. For example, when the learning rate value is too large, the agent performance would not be very good since the network would easily get stuck in local optimal weights. 
 
  
