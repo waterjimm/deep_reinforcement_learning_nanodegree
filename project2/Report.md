@@ -5,6 +5,10 @@
 ## Learning Algorithm
 This DRL implemented Double DQN model with two networks: target network and local network. (dqn_agent.py)
 
+- **Experience Replay:** In order to utlize all the past experience and reduce the correlation of consecutive records, experience replay is implemented to mix history together and randomly select the batches to train the local neural network. The limited buffer size and FIFO strategy to save experience would allow the neural network training evolved over time to capture recent but not only latest information. 
+
+- **Double DQN:** Due to the recursive formula of the Q function, using single neural network would lead to overestimate action values since the response Y also relies on the Q function. Therefore, two neural networks were introduced. The target network is updated periodically or much slower than the local network to make the training more stable to random noise. As a result, this could lead to better convergence. 
+
 ### Hyperparameters
 max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995
 
@@ -40,6 +44,7 @@ Reward History:
 
 
 ## Ideas of Future work
-1. Change the architecture of neural network such as number of layers, neuro size, adding dropout layers etc.
+1. Change the architecture of neural network such as number of layers, add convolutional layers, neuro size, adding dropout layers etc.
 2. Change the hyperparameters to evaluate its impact on the learning speed.
 3. Try different DRL structures such as dueling DQN
+
