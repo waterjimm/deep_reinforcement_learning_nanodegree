@@ -63,6 +63,5 @@ Experience replay is used to train the local neural network to draw samples from
 
 #### Interesting findings
 Learning rate is important. When its value is too large, the agent performance would not be very good since the network would easily get stuck in local optimal weights. 
-The episode number of the training step doesn't need to be too large since the average rewards would decrease due to "catastrophic forgetting" of too long training.
 
  
