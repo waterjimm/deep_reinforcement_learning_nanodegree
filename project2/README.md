@@ -9,11 +9,13 @@ Information is collected from the DRL nanodegree project instruction.
 
 ### Introduction
 
-For this project, you will train an agent to navigate (and collect bananas!) in a large, square world.
+This project is to train a computer program to intelligently navigate (and collect bananas!) in a large, square world.
 
 ![Trained Agent][image1]
 
-A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. Thus, the goal of your agent is to collect as many yellow bananas as possible while avoiding blue bananas.
+A deep reinforcement learning is a good fit of such kind of computer games. It train an agent built with neural networks to make a decision (action) based on the observation of the screen status (state) instantly. In training process, agent adjusts its strategy (update the neural networks) based on the past logs (experience).  
+
+In this navigation game, a reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. Thus, the goal of the agent is to collect as many yellow bananas as possible while avoiding blue bananas.
 
 The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction. Given this information, the agent has to learn how to best select actions. Four discrete actions are available, corresponding to:
 
@@ -50,6 +52,17 @@ After you have followed the instructions above, open Navigation.ipynb (located i
 
 In the "Take Random Actions in the Environment" code cell of the notebook, you'll learn how to design and observe an agent that always selects random actions at each timestep. 
 
-In the "DNQ learning" code cell, a DRL agent is provided and trained to perform much better than the random action. It is able to reach the goal (on average 15+ over 100 consecutive episodes). 
+### DRL Model 
+#### Model Summary
+In the "DQN learning" code cell, a DRL agent is provided and trained to perform much better than the random action. It is able to reach the goal (on average 15+ over 100 consecutive episodes). 
+
+The double DQN implemented contains two neural networks: target and local to make the training more stable and reliable. It utilizes pytorch to build the neural networks with 3 linear layers and Relu transformations. It is fast to train the neural network even witho only CPU (< 1hour).  
+
+#### Training Method
+Experience replay is used to train the local neural network to draw samples from history logs and reduce the correlation of consecutive samples. A fixed sized buffer is used to keep the recent experience. 
+
+#### Interesting findings
+Learning rate is important. When its value is too large, the agent performance would not be very good since the network would easily get stuck in local optimal weights. 
+The episode number of the training step doesn't need to be too large since the average rewards would decrease due to "catastrophic forgetting" of too long training.
 
  
