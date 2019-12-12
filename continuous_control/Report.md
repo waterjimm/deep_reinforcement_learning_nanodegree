@@ -11,7 +11,7 @@ This DRL implemented DDPG model. Both actor and critic networks have two copies 
 
 - **Experience Replay:** In order to utlize all the past experience from multiple (20 in our case) Reacher environments and reduce the correlation of consecutive records, experience replay is implemented to mix all history together and randomly select the batches to train the local neural network. The limited buffer size and FIFO strategy to save experience would allow the neural network training evolved over time to capture recent but not only latest information. 
 
-- **Double Actor and Critic Networks:** Two neural networks were introduced. The target network is updated periodically or much slower than the local network to make the training more stable to random noise. As a result, this could lead to better convergence. 
+- **Double Actor and Critic Networks:** Two neural networks were introduced. The target network is soft-updated much slower than the local network to make the training more stable to random noise. As a result, this could lead to better convergence. 
 
 - **Ornstein Uhlenbeck process (OU Noise):** The Ornstein-Uhlenbeck Process generates noise added to the actions. The noise is correlated with the previous noise to prevent the noise from canceling out or “freezing” the overall dynamic. This greatly helps the DDPG agent train faster.  
 
