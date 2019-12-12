@@ -53,7 +53,7 @@ class Agent():
 
         # Noise process
         self.noise = OUNoise((num_agents,action_size), random_seed)
-        # Noise process doesn't work
+        # Separate noise process below doesn't work well
         #self.noises=[]
         #for i in range(self.num_agents):
         #    self.noises.append(OUNoise(action_size, random_seed+i))
