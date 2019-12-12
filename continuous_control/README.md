@@ -64,21 +64,19 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 ### Instructions
 
-Follow the instructions in `Continuous_Control.ipynb` to get started with training your own agent!  
+Follow the instructions in `Continuous_Control.ipynb` to get started with training with RL agent!  
 
 ### Solutions
 
-In this github, we provided a DDPG model for the twenty agents version. It was able to reach an average 20 agents score of +30 over 100 consecutive episodes in 44 episodes. 
+In this github, we provided a DDPG agent solution for the twenty agents version. It was able to reach an average 20 agents score of +30 over 100 consecutive episodes in 48 episodes. 
 
-This DDPG model codes partial came from the [DDPG model sample codes in the DRLND GitHub repository](https://github.com/udacity/deep-reinforcement-learning#dependencies) with some local changes made to adapt to the 20 agents use case.  
-A single DDPG agent is shared by 20 reacher environments to decide actions.  
-Both actor and critic networks of this DDPG model have target and local networks to stablize the training process via soft update. 
+This DDPG model codes were built with a standard DDPG model [in the DRLND GitHub repository](https://github.com/udacity/deep-reinforcement-learning#dependencies) with some changes made to adapt to the 20 agents version.  
 
 #### Training Method
-Experience replay is used to train the local neural network to draw samples from history logs of all 20 reacher agents and reduce the correlation of consecutive samples. A fixed sized buffer is used to keep the recent experience. 
+A global DDPG agent is shared by 20 reacher environments to decide actions independently based on each environment states. The experience (state, action, reward, next_state, done) from each environment was stored together in the global DDPG agent memory buffer. Replay is performed with this memory buffer to train the actor and critic networks. Target and local networks are used to stablize the training process via soft update technique. 
 
 #### Interesting findings
-Random noise from OU process is added to actions to improve the exploration and make the training more effective. It has a significant impact on the convergence. 
+Random noise from OU process is added to actions to improve the exploration and make the training more efficient. It has a significant impact on the convergence. 
 
 
 
