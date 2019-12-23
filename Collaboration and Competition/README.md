@@ -42,7 +42,14 @@ The environment is considered solved, when the average (over 100 episodes) of th
 Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
 
 ## Solutions
+In this github, we provided a DDPG agent solution with shared states and actions information and revised reward derived from the rewards of two players. It was able to reach an average score of 0.5+ over 100 consecutive episodes in 2784 episodes.
+
+This DDPG model codes were built with a standard DDPG model [in the DRLND GitHub repository](https://github.com/udacity/deep-reinforcement-learning#dependencies) with some tuning on the hyper-parameters.
 
 ### Training Method
+A global DDPG agent is used by two players to decide actions collaboratively based on shared observed environment states of each player. The revised experience (states, actions, np.max(rewards), next_states, np.any(dones)) from environment was stored together in the DDPG agent memory buffer. Replay is performed with this memory buffer to train the actor and critic networks. Target and local networks are used to stablize the training process via soft update technique.
 
 ### Interesting Findings
+The training speed has large variance. Sometimes it could get the target reward less than 3k episodes but in the other times, it could stuck somewhere and cannot get any good solution more than 5k episodes. 
+
+Other tests to sharing only states or actions were also conducted but didn't get very good results. 
