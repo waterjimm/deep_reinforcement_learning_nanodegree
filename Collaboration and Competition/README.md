@@ -52,4 +52,4 @@ A global DDPG agent is used by two players to decide actions collaboratively bas
 ### Interesting Findings
 The training speed has large variance. Sometimes it could get the target reward less than 3k episodes but in the other times, it could stuck somewhere and cannot get any good solution more than 5k episodes. 
 
-Other tests to sharing only states or actions were also conducted but didn't get very good results. 
+Other tests sharing only states or sharing actions or with fully independent agents were also conducted but they didn't get very good results. 
