@@ -1,12 +1,9 @@
 
 [image1]: https://github.com/waterjimm/deep_reinforcement_learning_nanodegree/blob/master/Collaboration%20and%20Competition/cc_DDPG_test_result.JPG?raw=true "Rewards Plot"
 
-[image2]: https://github.com/waterjimm/deep_reinforcement_learning_nanodegree/blob/master/continuous_control/leaky_relu_pic.JPG?raw=true "Rewards Plot2"
-
-
 
 # Report
-## Learning Algorithm  (ddpg.py)
+## Learning Algorithm   
 This DRL implemented DDPG model. Both actor and critic networks have two copies of networks: target network and local network. (ddpg.py)
 
 - **Sharing observations and action information:** Since the goal is to play longer without dropping the ball or hitting out of bounds, two agents need 
@@ -65,5 +62,5 @@ Partial Reward History:
 ## Ideas of Future work
 1. Change the architecture of neural network such as number of layers, add convolutional layers, neuro size, adding dropout layers etc.
 2. Change the hyperparameters to evaluate its impact on the learning speed. LR appears to be quite important. 
-3. Try different DRL structures like MADDPG. 
+3. Try different DRL structures like MADDPG to explore more stable training process. 
 
