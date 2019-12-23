@@ -6,11 +6,10 @@
 ## Learning Algorithm   
 This DRL implemented DDPG model. Both actor and critic networks have two copies of networks: target network and local network. (ddpg.py)
 
-- **Sharing observations and action information:** Since the goal is to play longer without dropping the ball or hitting out of bounds, two agents need 
+- **Sharing observations and actions information:** Since the goal is to play longer without dropping the ball or hitting out of bounds, two agents need 
 to collaborate with each other. The final reward is the maximal of the two agents' scores. Therefore, sharing the states observed by each agent
 and the actions taken by each agent in the same DDPG speeds up the training process. The input states are the comination of two states observed by each agent. The actions is also 
-the combination of actions of each agent. Meanwhile, the reward of each step is defined as the maximal of agents' reward which is the same direction of
-final reward score. 
+the combination of actions of each agent. Meanwhile, the reward of each step is defined as the maximal of agents' reward which is the same direction of final reward score. Therefore, a global DDPG agent decides the actions of both players collaboratively based on observations/states of both agents.  
 
 - **Experience Replay:** In order to utlize all the past experience of plays and reduce the correlation of consecutive records, experience replay is implemented to keep recent history together and randomly select the batches to train the local neural network. The limited buffer size and FIFO strategy to save experience would allow the neural network training evolved over time to capture recent but not only latest information. 
 
