@@ -1,5 +1,5 @@
 
-[image1]: https://github.com/waterjimm/deep_reinforcement_learning_nanodegree/blob/master/continuous_control/continuous_control.JPG?raw=true "Rewards Plot"
+[image1]: https://github.com/waterjimm/deep_reinforcement_learning_nanodegree/blob/master/Collaboration%20and%20Competition/cc_DDPG_test_result.JPG?raw=true "Rewards Plot"
 
 [image2]: https://github.com/waterjimm/deep_reinforcement_learning_nanodegree/blob/master/continuous_control/leaky_relu_pic.JPG?raw=true "Rewards Plot2"
 
